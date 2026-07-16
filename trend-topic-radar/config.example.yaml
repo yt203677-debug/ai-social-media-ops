@@ -9,14 +9,10 @@ output_count: 5
 products:
   - name: AI
     selling_point: "待补全：你在 AI 领域提供什么、对用户的核心价值一句话"
-  - name: 云托管服务
-    selling_point: "待补全：云托管的差异化卖点，如稳定/便宜/一键部署智能体"
-  - name: AI毛绒玩具
-    selling_point: "搭载云托管 OpenClaw、能真正干活的毛绒玩具（待补全一句更具体的卖点）"
 
 # 目标人群：越具体越好（身份 + 场景 + 痛点）
 audience:
-  description: "待补全：例如 关注 AI 的年轻人 / 想要陪伴+能干活玩具的家庭 / 需要托管智能体的开发者"
+  description: "待补全：例如 关注 AI 的年轻人"
   pain_points:
     - "待补全：痛点1"
     - "待补全：痛点2"
