@@ -24,6 +24,26 @@
 - 严格只读：不发帖、不改设置、不点赞私信。遇登录态失效/验证码，报"需人工处理"，不猜测、不硬闯。
 - 控制频率，避免高频刷新后台。
 
+#### 各平台数据页入口（URL 特征，供导航参考）
+> 平台后台 DOM/域名会变，以下为大致特征；先按域名进创作者中心，再找"数据/数据中心/分析(Analytics)"。
+> 读数时优先用页面可见的数字标签，不要依赖固定 CSS 选择器。取不到就转手动录入。
+
+| 平台 | 后台域名/入口 | 数据页特征关键词 |
+| --- | --- | --- |
+| 抖音 | creator.douyin.com（创作者服务中心） | "数据中心""作品数据""粉丝数据" |
+| 视频号 | channels.weixin.qq.com（微信视频号助手） | "数据""动态数据""内容分析" |
+| 公众号 | mp.weixin.qq.com（公众平台） | "统计""内容分析""用户分析" |
+| 快手 | cp.kuaishou.com | "数据中心""作品分析" |
+| 小红书 | creator.xiaohongshu.com（蒲公英/创作中心） | "数据中心""笔记数据" |
+| bilibili | member.bilibili.com（创作中心） | "数据中心""视频数据""粉丝管理" |
+| YouTube | studio.youtube.com | "Analytics""Content""Overview/Reach" |
+| X (Twitter) | analytics.twitter.com 或 x.com 帖子 Analytics | "Impressions""Engagements" |
+| Instagram | 需在 App/Meta Business Suite | "Insights""Reach""Interactions" |
+| TikTok | tiktok.com/tiktokstudio 或 Creator Center | "Analytics""Video views""Followers" |
+
+- 单条内容数据：多数平台在"作品/视频详情页"或"内容分析"里可看单条曝光/播放/互动。
+- 抓到后按 [templates/data-entry.csv](templates/data-entry.csv) 的列结构落表，再进入判定。
+
 ### 方式3 · 官方数据 API
 - 若某平台（如公众号、YouTube、X）有开放的数据统计 API，可后续接入自动拉取。
 

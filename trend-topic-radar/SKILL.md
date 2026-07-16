@@ -24,22 +24,27 @@ description: >-
 
 若 `products`/`audience`/`competitors` 仍是占位符（含"待补全"），先提醒用户补全，再继续。
 
+**必读（回流闭环，硬性）**：产出选题前**必须先读取** `../analytics/爆款规律库/patterns.md`（若存在）。
+把其中"已验证的爆款规律"作为本次选题与钩子设计的**优先依据**；标注"待验证"的作参考；文件不存在则跳过。
+不要跳过这一步——这是让选题越来越准的关键。
+
 ## 工作流
 
 复制以下清单并逐步推进：
 
 ```
 选题雷达 Task Progress:
-- [ ] 1. 读取 config，确认定位/关键词/竞品
+- [ ] 1. 读取 config；并读取 ../analytics/爆款规律库/patterns.md（回流规律）
 - [ ] 2. 采集三类信息（平台热榜 / 竞品爆款 / 行业新闻）
-- [ ] 3. 相关性打分 + 爆款规律拆解
+- [ ] 3. 相关性打分 + 爆款规律拆解（优先复用已验证规律）
 - [ ] 4. 按模板产出当日选题日报（草稿）
 - [ ] 5. 归档到 选题库/YYYY-MM-DD.md
 - [ ] 6. 交给用户人工审核挑选（不自动进入制作/发布）
 ```
 
-### 步骤 1：确认定位
-读 `config.yaml`，向用户简述本次监控范围（关键词、平台、竞品数量），无需等待即可继续。
+### 步骤 1：确认定位 + 读取回流规律
+读 `config.yaml`，并读取 `../analytics/爆款规律库/patterns.md`（存在则加载已验证规律）。
+向用户简述本次监控范围（关键词、平台、竞品数量）及"本次将优先复用的已验证规律"，无需等待即可继续。
 
 ### 步骤 2：采集
 优先用 `web_search` / `web_fetch`；页面需渲染或需展开时再用托管浏览器读**公开页面**（不登录）。
@@ -54,12 +59,15 @@ description: >-
 ### 步骤 3：分析
 对每条候选做两件事：
 1. **相关性打分（1-5）**：与 `products` 三条线（AI / 云托管 / AI 毛绒玩具）和 `audience` 的契合度。低于 3 分丢弃。
+   - 若候选契合 `patterns.md` 里**已验证的爆款规律**（选题方向/钩子/形式），相关性可加 1 分（上限 5），并在选题里注明"复用规律：xxx"。
 2. **爆款规律拆解**：这条为什么火——选题角度、开头 3 秒钩子、内容结构、情绪/利益点。提炼出"我们可复用的公式"。
 
 ### 步骤 4：产出选题日报
 按 [templates/topic-report.md](templates/topic-report.md) 生成，选题数量 = `output_count`。
 每条选题必须包含：选题标题、为什么现在做（关联的热点/事件+时效性）、目标人群痛点、内容角度、
-开头 3 秒钩子、脚本框架（引用 [templates/script-outline.md](templates/script-outline.md)）、平台适配建议、相关性评分与来源链接。
+开头 3 秒钩子、脚本框架、平台适配建议、相关性评分与来源链接。
+脚本框架**必须从 [templates/script-outline.md](templates/script-outline.md) 里选一个命名框架**（如 PAS/反转型/盘点型/故事种草型），
+并把每一步填成**具体台词**，钩子从"黄金 3 秒钩子公式库"里挑一个，不要只写结构名。
 选题要绑定到具体产品线卖点，避免只蹭热点不落地转化。
 
 ### 步骤 5：归档
@@ -80,5 +88,6 @@ description: >-
 - 数据源清单与采集注意事项：[reference.md](reference.md)
 - 配置样例：[config.example.yaml](config.example.yaml)
 - 选题日报模板：[templates/topic-report.md](templates/topic-report.md)
-- 脚本框架模板：[templates/script-outline.md](templates/script-outline.md)
+- 脚本框架库（命名框架 + 钩子/CTA 公式）：[templates/script-outline.md](templates/script-outline.md)
+- 回流规律（由 analytics 沉淀，产出前必读）：`../analytics/爆款规律库/patterns.md`
 - 在 OpenClaw 上部署与配定时任务：[reference.md](reference.md) 末尾「部署」章节
