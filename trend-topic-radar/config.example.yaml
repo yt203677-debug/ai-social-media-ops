@@ -1,0 +1,62 @@
+# 选题雷达配置样例
+# 用法：复制本文件为同目录 config.yaml，把「待补全」替换成你的真实信息。
+# skill 运行时优先读 config.yaml，读不到才回退到本文件并提示补全。
+
+# 每次产出的选题条数
+output_count: 5
+
+# 产品线：每条线一句话卖点（用于把热点选题落地到具体转化）
+products:
+  - name: AI
+    selling_point: "待补全：你在 AI 领域提供什么、对用户的核心价值一句话"
+  - name: 云托管服务
+    selling_point: "待补全：云托管的差异化卖点，如稳定/便宜/一键部署智能体"
+  - name: AI毛绒玩具
+    selling_point: "搭载云托管 OpenClaw、能真正干活的毛绒玩具（待补全一句更具体的卖点）"
+
+# 目标人群：越具体越好（身份 + 场景 + 痛点）
+audience:
+  description: "待补全：例如 关注 AI 的年轻人 / 想要陪伴+能干活玩具的家庭 / 需要托管智能体的开发者"
+  pain_points:
+    - "待补全：痛点1"
+    - "待补全：痛点2"
+
+# 监控关键词：采集热点与竞品时用
+keywords:
+  - AI agent
+  - 智能体
+  - 云托管
+  - AI玩具
+  - 陪伴机器人
+  - 毛绒玩具
+  - OpenClaw
+  # 按需增删
+
+# 竞品 / 对标账号：填 3-5 个（名称 + 平台 + 主页链接，越全越好）
+competitors:
+  - name: "待补全：对标账号1"
+    platform: 抖音
+    url: "待补全：主页链接"
+  - name: "待补全：对标账号2"
+    platform: 抖音
+    url: "待补全：主页链接"
+
+# 目标平台：首发抖音，其余先预留（true=纳入本次监控）
+platforms:
+  抖音: true
+  视频号: false
+  公众号: false
+  youtube: false
+  x: false
+  instagram: false
+  tiktok: false
+  amazon_shop: false
+
+# 归档目录（相对本 skill 目录）
+archive_dir: "选题库"
+
+# 规避项：以下类型的热点直接标注风险并跳过
+avoid:
+  - 政治敏感
+  - 医疗/功效承诺
+  - 明显违规或引战话题

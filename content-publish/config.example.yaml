@@ -1,0 +1,35 @@
+# 多平台分发配置样例
+# 用法：复制为同目录 config.yaml 后按需修改。
+# 注意：产品线/人群/平台开关(platforms)以 ../trend-topic-radar/config.yaml 为单一事实来源，
+# 本文件只放"发布相关"的补充设置。
+
+# 归档目录（相对本 skill 目录）
+archive_dir: "发布库"
+
+# 各平台账号名/主页（填了会写进素材包，方便你核对发到哪个号）
+accounts:
+  抖音: "待补全：账号名/主页"
+  视频号: "待补全"
+  公众号: "待补全"
+  youtube: "待补全"
+  x: "待补全"
+  instagram: "待补全"
+  tiktok: "待补全"
+  amazon_shop: "待补全"
+
+# 发布时间偏好（覆盖 reference.md 的默认经验值；留空则用默认）
+posting_time_preference:
+  抖音: "19:00-22:00"
+  公众号: "07:00-09:00"
+  # 其余留空表示用 reference.md 默认
+
+# 目标市场语言（海外平台改写时用）
+locale:
+  youtube: zh/en
+  x: en
+  instagram: en
+  tiktok: en
+  amazon_shop: en
+
+# 默认视频画幅（交给视频工厂出片时用）
+default_video_format: "9:16"

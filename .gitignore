@@ -1,0 +1,24 @@
+# Local configuration (may contain account, competitor, or business data)
+**/config.yaml
+
+# Runtime outputs and analytics data
+**/选题库/
+**/发布库/
+**/复盘报告/
+**/爆款规律库/
+**/数据/
+
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+
+# Editor / OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temporary files
+*.log
+*.tmp

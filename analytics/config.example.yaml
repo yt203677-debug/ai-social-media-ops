@@ -1,0 +1,31 @@
+# 数据复盘配置样例
+# 用法：复制为同目录 config.yaml 后按需修改。
+# 产品线/人群从 ../trend-topic-radar/config.yaml 取，此处只放复盘相关设置。
+
+# 复盘周期：weekly（周报）| monthly（月报）
+review_cycle: weekly
+
+# 核心 KPI：判定爆款时优先看哪个指标（views | new_followers | conversion）
+kpi: views
+
+# 爆款判定倍数：核心指标 ≥ 该倍数 × 账号中位数，即为爆款
+hit_multiplier: 3
+
+# 数据来源方式：manual（手动导出/录入，默认）| browser_readonly（浏览器只读）| api
+data_source: manual
+
+# 纳入复盘的平台（与 trend-topic-radar 保持一致，true=纳入）
+platforms:
+  抖音: true
+  视频号: false
+  公众号: true
+  youtube: false
+  x: false
+  instagram: false
+  tiktok: false
+  amazon_shop: false
+
+# 归档目录（相对本 skill 目录）
+report_dir: "复盘报告"
+patterns_file: "爆款规律库/patterns.md"
+data_file: "数据/entries.csv"
